@@ -22,7 +22,6 @@
 // }
 
 //TODO: class vs const ?
-//TODO: across app authentication and session
 //async and await vs promises 
 //another way to make it not using callbacks to return isAuthenticated/errormessage
 //make it a singleton?

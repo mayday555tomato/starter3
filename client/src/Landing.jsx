@@ -29,8 +29,6 @@ class Landing extends Component {
     }
 }
 
-
-//TODO render as link to navigate to new apps.
 const Icons = ({apps}) => (
     <div>
     {apps.map(app => (

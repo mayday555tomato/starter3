@@ -18,14 +18,8 @@ class RegisterPage extends Component{
 
     onSubmit(e){
         e.preventDefault();
-        if(this.state.user.password1 === this.state.user.password2){
-            this.setState({errorMessage: null});
-
-            console.log('passwords are the same');
-            //TODO: start fetching.  fetch by username   
-        } else {
-            this.setState({errorMessage: 'Passwords shall be the same.'});
-        }     
+        console.log(this.state.user);        
+        //TODO: fetch by username        
     }
 
     onChange(e){
