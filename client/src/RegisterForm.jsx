@@ -14,8 +14,8 @@ class RegisterForm extends Component{
     }
 
     render(){
-        if(this.state.redirectToLoginPage){
-            return <Redirect to='/login' />;
+        if(this.props.redirectToHomePage){
+            return <Redirect to='/landing' />;
         }
 
         return(

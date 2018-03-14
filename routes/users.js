@@ -6,7 +6,15 @@ router.get('/', function(req, res, next) {
   res.json(users);
 });
 
-
+router.put('/', (req, res) => {
+  let user = req.body;
+  for(let i = 0; i < users.length; i ++){
+    if (users[i].username === user.username){
+      res.status(400).json({message: 'user already exists.'});
+    }
+  }
+  res.status(200).end();
+});
 router.post('/', (req, res) =>{
   let user = req.body;
   for(let i = 0; i < users.length; i ++){
