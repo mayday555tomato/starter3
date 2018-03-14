@@ -26,7 +26,7 @@ class LoginForm extends Component{
 
         return(
             <div>
-                <h1>Login FOOOOOOORM</h1>
+                <h1>Login Page</h1>
                 <form onSubmit={this.props.onSubmit}>
                     <label>UserName: </label>                    
                     <input type='text' onChange={this.props.onChange} value={this.props.user.username} name='username'/>

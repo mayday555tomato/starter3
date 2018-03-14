@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import LoginForm from './LoginForm';
+import Auth from './Auth';
 
 class LoginPage extends Component {
     constructor(props){
@@ -22,17 +23,16 @@ class LoginPage extends Component {
         console.log('username: ' + this.state.user.username);
         console.log('password: ' + this.state.user.password);
 
-        fetch('/users', {
-            method: 'POST',
-            body: JSON.stringify(this.state.user),
-            headers: {'Content-Type': 'application/json'},
-        }).then(res => {
-            if(res.status === 200){
+        Auth.authenticate(this.state.user, (isAuthenticated, errorMessage) =>{
+            if(isAuthenticated){
                 this.setState({redirectToLandingPage: true});
-            }else {
-                res.json().then(error => this.setState({errorMessage: error.message}));
+                console.log('success');
+            }else{
+                this.setState({errorMessage: errorMessage});
             }
-        }).catch(error => console.log(error));
+        });
+
+        console.log(`Auth.isAuthenticated VALUE:  ${Auth.isAuthenticated}`);
     }
 
     onChange(e){
